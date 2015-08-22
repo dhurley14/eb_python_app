@@ -1,0 +1,2 @@
+Important to know
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html#python-flask-install
