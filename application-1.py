@@ -1,7 +1,8 @@
 from flask import Flask
 
+
 # print a nice greeting.
-def say_hello(username = "World"):
+def say_hello(username="World"):
     return '<p>Hello %s!</p>\n' % username
 
 # some bits of text for the page.
@@ -18,13 +19,17 @@ footer_text = '</body>\n</html>'
 application = Flask(__name__)
 
 # add a rule for the index page.
-application.add_url_rule('/', 'index', (lambda: header_text +
-    say_hello() + instructions + footer_text))
+application.add_url_rule(
+    '/', 'index', (lambda: header_text + say_hello() + instructions + footer_text)
+)
 
 # add a rule when the page is accessed with a name appended to the site
 # URL.
-application.add_url_rule('/<username>', 'hello', (lambda username:
-    header_text + say_hello(username) + home_link + footer_text))
+application.add_url_rule(
+    '/<username>', 'hello', (
+        lambda username: header_text + say_hello(username) + home_link + footer_text
+    )
+)
 
 # run the app.
 if __name__ == "__main__":
